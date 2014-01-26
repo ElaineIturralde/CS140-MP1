@@ -1,0 +1,6 @@
+tinola 6
+prep 15
+cook 25
+prep 5
+cook 10
+prep 10
