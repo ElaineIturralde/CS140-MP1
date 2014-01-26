@@ -5,6 +5,7 @@ public class Restaurant{
 	public static void main(String args[]){
 		
 		RecipeBook rb = new RecipeBook();
+
 		
 		try{
 			BufferedReader br = new BufferedReader(new FileReader("tasklist.txt"));
@@ -20,7 +21,17 @@ public class Restaurant{
 			e.printStackTrace();
 			System.exit(1);
 		}
-		
+
+		//Restaurant Mehods Test
+		RestaurantMethods rm = new RestaurantMethods();
+
+		Recipe adobo = rm.addRecipeFromFile("adobo.txt");
+
+		System.out.println(adobo.toString());
+
+
+
+
 	}
 
 }
