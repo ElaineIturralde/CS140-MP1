@@ -48,7 +48,8 @@ public class Recipe{
         public ArrayList<Integer> getActionTimes(){
                 return this.actionTimes;
         }
-
+		
+		//Creates a copy of this recipe.
         public void copyRecipe(Recipe r){
                 r.setName(this.getName());
                 r.setPriority(this.getPriority());
@@ -58,13 +59,12 @@ public class Recipe{
 
         //Method to produce how the object will be printed
         public String toString(){
-                String ret = "Name: " + this.name + "\nPriority: " + this.priority + "\nActions and ActionTimes:";
+            
+			String ret = "Name: " + this.name + "\nPriority: " + this.priority + "\nActions and ActionTimes:";
 
-                for(int i = 0; i < actions.size(); i++){
-
-                        ret += "\n" + actions.get(i) + "-" + actionTimes.get(i);
-                } 
-
-                return ret;
+            for(int i = 0; i < actions.size(); i++){
+				ret += "\n" + actions.get(i) + " - " + actionTimes.get(i);
+			} 
+			return ret;
         }
 }
