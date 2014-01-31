@@ -19,6 +19,7 @@ public class Preparation{
 				catch (InterruptedException e) {}
 				System.out.println ("Preparations are complete!");
 			}
+			count = 0;
 		}
 	}
 
