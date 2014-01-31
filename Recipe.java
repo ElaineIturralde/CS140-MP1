@@ -41,6 +41,11 @@ public class Recipe{
                 return this.priority;
         }
         
+        public int getNewPriority(){
+        	int result = //formula ni Genesis
+        	return this.result;
+        }
+        
         public ArrayList<String> getActions(){
                 return this.actions;
         }
