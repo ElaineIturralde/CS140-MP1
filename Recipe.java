@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Recipe{
 
         private String name;
+        private int start;
         private int priority;
         private ArrayList<String> actions;
         private ArrayList<Integer> actionTimes;
@@ -10,15 +11,20 @@ public class Recipe{
         public Recipe(){
         }
         
-        public Recipe(String name, int priority, ArrayList<String> actions, ArrayList<Integer> actionTimes){
+        public Recipe(String name, int priority, ArrayList<String> actions, ArrayList<Integer> actionTimes, int start){
                 this.name = name;
                 this.priority = priority;
                 this.actions = actions;
                 this.actionTimes = actionTimes;
+                this.start = start;
         }
         
         public void setName(String name){
                 this.name = name;
+        }
+        
+        public void setStart(int start){
+        	this.start = start;
         }
         
         public void setPriority(int priority){
@@ -35,6 +41,10 @@ public class Recipe{
         
         public String getName(){
                 return this.name;
+        }
+        
+        public int getStart(){
+        	return this.start;
         }
         
         public int getPriority(){
@@ -60,6 +70,7 @@ public class Recipe{
                 r.setPriority(this.getPriority());
                 r.setActions(this.getActions());
                 r.setActionTimes(this.getActionTimes());
+                r.setStart(this.start);
         }
 
         //Method to produce how the object will be printed
