@@ -1,0 +1,43 @@
+Anyway so based added ung sa suggestion ni Elaine something to improve lang siguro
+
+1> So anyway diba ung recipe ay mga steps 
+	1.1> ung mga non cooking steps are not really a problem kasi may indefinite number of assistants ung chef
+	 na pwedeng gumawa nung non-cooking steps... ung problema nalang kung pano si sila i-sort
+	 	-separate job queue for non-cooking steps...
+	1.2> ung priority nung order eh ma-iinherit nang lahat ng steps
+	1.3> ung queue for cooking steps eh sort them by yes First come First serve
+		1.3.1> how about... something like a priority system based on a "priority value" computed using 
+			1.3.1.1> Time recipe entered the queue (FCFS)
+			1.3.1.2> Time to cook the meal
+			1.3.1.3> Time until cooking step (Time of non-cooking steps)
+
+			i.e. 
+			[Pseudocode]
+
+			1  class Priority
+			2
+			3	 
+			4	#current number;think of it as get your number to be served kind of thing... incrementing value dun sa main
+			5	#or sa what so ever
+			6	
+			7	def set(Recipe rep, int current_num)
+			8
+			9		#This just a sample equation but I think you get the gist
+			10		return ret = (50 *  (10-rep.getPriority())) +(30 * current_num) + (15 * rep.average_cooking_time()) + 
+								 (5 * rep.average_non_cooking_time());
+			11		
+			12		#So here 50% ung priority nung recipe, 30% is kung pang-ilan syang pumasok, 15% average cooking time 
+			13		#and 5% average non-cooking time
+			14		#This means na pag mas mababa ung "priority value" mas mataas ung priority nya
+			15		
+			16	end set
+			17
+			18 end Priority
+
+			[/Pseudocode]
+
+		1.3.2> this "priority value" decays everytime if it is not chosen to be processed
+
+2> So yah bale kelangan medyo i-revise ung Recipe.actions
+
+We might actually want to build the scheduler and see how it goes so we could improve it

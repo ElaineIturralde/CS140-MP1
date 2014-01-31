@@ -6,6 +6,19 @@ public class Restaurant{
 	public static void main(String args[]){
 		
 		RecipeBook rb = new RecipeBook();
+		ArrayList<Action> cookActions;
+		ArrayList<Action> prepActions;
+
+
+    	Collections.sort(cookActions, new Comparator<Action>() {
+        	@Override
+	        public int compare(Recipe  recipe1, Recipe  recipe2)
+	        {
+
+	            return  recipe1.getName().compareTo(recipe2.getName());
+	        }
+    	});
+	
 
 		
 		try{

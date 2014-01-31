@@ -1,21 +1,20 @@
 import java.util.ArrayList;
+import "Action.java";
 
 public class Recipe{
 
         private String name;
         private int start;
         private int priority;
-        private ArrayList<String> actions;
-        private ArrayList<Integer> actionTimes;
-        
+        private ArrayList<Action> actions;
+
         public Recipe(){
         }
         
-        public Recipe(String name, int priority, ArrayList<String> actions, ArrayList<Integer> actionTimes, int start){
+        public Recipe(String name, int priority, ArrayList<Action> actions,  int start){
                 this.name = name;
                 this.priority = priority;
                 this.actions = actions;
-                this.actionTimes = actionTimes;
                 this.start = start;
         }
         
@@ -28,16 +27,16 @@ public class Recipe{
         }
         
         public void setPriority(int priority){
-                this.priority = priority;
+            this.priority = priority;
         }
         
-        public void setActions(ArrayList<String> actions){
-                this.actions = actions;
+        public void setActions(ArrayList<Action> actions){
+            for(int i = 0; i < actions.size(); i++){
+                actions.get(i).setRecipe(this.name);
+            }
+            this.actions = actions;
         }
         
-        public void setActionTimes(ArrayList<Integer> actionTimes){
-                this.actionTimes = actionTimes;
-        }
         
         public String getName(){
                 return this.name;
@@ -56,13 +55,10 @@ public class Recipe{
         	return this.result;
         }
         
-        public ArrayList<String> getActions(){
+        public ArrayList<Action> getActions(){
                 return this.actions;
         }
         
-        public ArrayList<Integer> getActionTimes(){
-                return this.actionTimes;
-        }
 		
 		//Creates a copy of this recipe.
         public void copyRecipe(Recipe r){

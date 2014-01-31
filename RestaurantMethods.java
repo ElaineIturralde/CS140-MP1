@@ -49,4 +49,16 @@ public class RestaurantMethods{
 
 	}
 
+	public ArrayList<Action> sortActionsByPriority(){
+
+		Collections.sort(fruits, new Comparator<Fruit>() {
+        	@Override
+	        public int compare(Recipe  recipe1, Recipe  recipe2)
+	        {
+
+	            return  recipe1.getName().compareTo(recipe2.getName());
+	        }
+    	});
+	}
+
 }
