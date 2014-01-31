@@ -17,7 +17,7 @@ public class Preparation{
 					this.wait();
 				}
 				catch (InterruptedException e) {}
-				System.out.println ("Preparations are complete!");
+				System.out.println ("Preparations can be done!");
 			}
 			count = 0;
 		}
