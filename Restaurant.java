@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.regex;
 
 public class Restaurant{
 
@@ -22,16 +23,22 @@ public class Restaurant{
 			System.exit(1);
 		}
 
-		//Restaurant Mehods Test
+		//Restaurant Methods Test
 		RestaurantMethods rm = new RestaurantMethods();
-
-		Recipe adobo = rm.addRecipeFromFile("adobo.txt");
-
-		System.out.println(adobo.toString());
-
-
-
-
+		
+		//folder name = MP140
+		File folder = new File("MP140");
+		String [] listFiles = folder.list();
+		
+		int x = 0;
+		while(listFiles.length > x){
+			String [] extension = listFiles[x].split(".");
+			if(!listFiles[x].equals("Tasklist.txt") && extension[1].equals(".txt")){
+				Recipe food = rm.addRecipeFromFile(listFiles[x]);
+				System.out.println(food.toString());
+			}
+			x++;
+		}
 	}
 
 }
