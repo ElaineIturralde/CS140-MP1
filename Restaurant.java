@@ -10,9 +10,20 @@ public class Restaurant{
 		
 		try{
 			BufferedReader br = new BufferedReader(new FileReader("tasklist.txt"));
+			RestaurantMethods rm = new RestaurantMethods();
 			
 			while(br.ready()){
-				System.out.println(br.readLine());
+				String [] recipe = br.readLine().split(" ");
+				String temp = recipe[0] + ".txt";
+				if(temp.exists()){
+					Recipe food = rm.addRecipeFromFile(temp, Integer.parseInt(recipe[1]));
+					System.out.println(food.toString());
+					System.out.println(br.readLine());
+				}
+				else{
+					System.out.println ("One recipe does not exist.");
+					break;
+				}
 			}
 			
 		}catch(FileNotFoundException e){
@@ -22,7 +33,7 @@ public class Restaurant{
 			e.printStackTrace();
 			System.exit(1);
 		}
-
+/*
 		//Restaurant Methods Test
 		RestaurantMethods rm = new RestaurantMethods();
 		
@@ -39,6 +50,7 @@ public class Restaurant{
 			}
 			x++;
 		}
+*/
 	}
 
 }
