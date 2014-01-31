@@ -33,7 +33,7 @@ public class Restaurant{
 		int x = 0;
 		while(listFiles.length > x){
 			String [] extension = listFiles[x].split(".");
-			if(!listFiles[x].equals("Tasklist.txt") && extension[1].equals(".txt")){
+			if(!listFiles[x].equals("tasklist.txt") && extension[1].equals(".txt")){
 				Recipe food = rm.addRecipeFromFile(listFiles[x]);
 				System.out.println(food.toString());
 			}
