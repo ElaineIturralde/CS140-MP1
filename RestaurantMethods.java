@@ -20,9 +20,6 @@ public class RestaurantMethods{
 		try{
 			BufferedReader br = new BufferedReader(new FileReader(file));
 
-		
-
-
 			line = br.readLine().split(" ");
 			name = line[0];
 			priority = Integer.parseInt(line[1]);

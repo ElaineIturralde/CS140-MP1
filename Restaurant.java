@@ -1,5 +1,5 @@
 import java.io.*;
-import java.util.regex;
+import java.util.*;
 
 public class Restaurant{
 
@@ -9,23 +9,21 @@ public class Restaurant{
 		ArrayList<Action> cookActions;
 		ArrayList<Action> prepActions;
 
-
+		/**
     	Collections.sort(cookActions, new Comparator<Action>() {
         	@Override
 	        public int compare(Recipe  recipe1, Recipe  recipe2)
 	        {
-
-	            return  recipe1.getName().compareTo(recipe2.getName());
+				return  recipe1.getName().compareTo(recipe2.getName());
 	        }
-    	});
-	
+    	});**/
 
-		
 		try{
 			BufferedReader br = new BufferedReader(new FileReader("tasklist.txt"));
 			RestaurantMethods rm = new RestaurantMethods();
 			
 			while(br.ready()){
+			
 				String [] recipe = br.readLine().split(" ");
 				String temp = recipe[0] + ".txt";
 				if(temp.exists()){

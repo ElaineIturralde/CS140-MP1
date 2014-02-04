@@ -7,15 +7,13 @@ public class Action{
 	private String recipe;
 
 	public Action(String name, int time){
-
 		this.name = name;
 		this.time = time;
 		isCookingStep = (name.toLowerCase.compareTo("cook") == 0);
-
 	}
 
 	public void switchDone(){
-		this.isDone = !(this.isDone)
+		this.isDone = !(this.isDone);
 	}
 
 	public void switchDone(boolean isDone){
