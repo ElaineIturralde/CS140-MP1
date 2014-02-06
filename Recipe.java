@@ -3,54 +3,46 @@ import java.util.ArrayList;
 public class Recipe{
 
     private String name;
-    private int start;
     private int priority;
     private ArrayList<Action> actions;
 
     public Recipe(){}
 
-    public Recipe(String name, int priority, ArrayList<Action> actions,  int start){
+    public Recipe(String name, int priority, ArrayList<Action> actions){
         this.name = name;
         this.priority = priority;
         this.actions = actions;
-        this.start = start;
     }
         
     public void setName(String name){
         this.name = name;
     }
-        
-    public void setStart(int start){
-        this.start = start;
-    }
-        
+
     public void setPriority(int priority){
        this.priority = priority;
     }
-        
-    public void setActions(ArrayList<Action> actions){
-       for(int i = 0; i < actions.size(); i++){
-           actions.get(i).setRecipe(this.name);
-       }
-       this.actions = actions;
-    }
+	
+	public void setActions(ArrayList<Actions> actions){
+		this.actions = new ArrayList<Action>();
+		for(int ac = 0; ac < actions.size(); actions++){
+			this.actions.add(actions.get(ac));
+		}
+	}
  
     public String getName(){
        return this.name;
     }
         
-    public int getStart(){
-		return this.start;
-    }
-        
     public int getPriority(){
         return this.priority;
     }
-        
+    
+	/**   
     public int getNewPriority(){
     	//int result = //formula ni Genesis
         //return result;
     }
+	**/
         
     public ArrayList<Action> getActions(){
         return this.actions;
@@ -60,9 +52,10 @@ public class Recipe{
     public void copyRecipe(Recipe r){
         r.setName(this.getName());
 		r.setPriority(this.getPriority());
-        r.setActions(this.getActions());
-        r.setActionTimes(this.getActionTimes());
-        r.setStart(this.start);
+		
+		for(int ac = 0; ac < actions.size(); ac++){
+			r.getActions().add(actions.get(ac));
+		}
     }
 
     //Method to produce how the object will be printed
