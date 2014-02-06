@@ -1,44 +1,62 @@
 import java.io.*;
-import java.util.regex;
+import java.util.*;
 
 public class Restaurant{
 
 	public static void main(String args[]){
 		
 		RecipeBook rb = new RecipeBook();
+		ArrayList<Task> tasklist = new ArrayList<Task>();
 		ArrayList<Action> cookActions;
 		ArrayList<Action> prepActions;
 
-
-    	Collections.sort(cookActions, new Comparator<Action>() {
-        	@Override
-	        public int compare(Recipe  recipe1, Recipe  recipe2)
-	        {
-
-	            return  recipe1.getName().compareTo(recipe2.getName());
-	        }
-    	});
-	
-
-		
 		try{
+			
+			// Reads the tasklist.txt.
 			BufferedReader br = new BufferedReader(new FileReader("tasklist.txt"));
-			RestaurantMethods rm = new RestaurantMethods();
 			
 			while(br.ready()){
-				String [] recipe = br.readLine().split(" ");
-				String temp = recipe[0] + ".txt";
-				if(temp.exists()){
-					Recipe food = rm.addRecipeFromFile(temp, Integer.parseInt(recipe[1]));
-					System.out.println(food.toString());
-					System.out.println(br.readLine());
-				}
-				else{
-					System.out.println ("One recipe does not exist.");
-					break;
+				
+				// Extracts the recipes from the tasklist.txt that are to be cooked.
+				String read = br.readLine();
+				
+				Task t = new Task();
+				t.setName(read.substring(0, splitString(read)));
+				t.setStartTime(Integer.parseInt(read.substring(splitString(read) + 1, read.length())));
+				tasklist.add(t);
+				
+				if(rb.getSize() == 0 || !(rb.searchRecipe(t.getName()))){
+					
+					// Reads the recipe.txt.
+					BufferedReader br2 = new BufferedReader(new FileReader(t.getName() + ".txt"));
+					
+					// Extracts the name and priority of the recipe.
+					String read2 = br2.readLine();
+					String name = read2.substring(0, splitString(read2));
+					int priority = Integer.parseInt(read2.substring(splitString(read2) + 1, read2.length()));
+					ArrayList<Action> actions = new ArrayList<Action>();
+					
+					// Extracts the actions needed to be done in preparing the particular recipe.
+					while(br2.ready()){
+						String read3 = br2.readLine();
+						Action a = new Action(read3.substring(0, splitString(read3)), Integer.parseInt(read3.substring(splitString(read3) + 1, read3.length())));
+						actions.add(a);
+					}
+					Recipe r = new Recipe(name, priority, actions);
+					rb.addRecipe(r);
 				}
 			}
-			
+			// Just prints the recipes in the recipe book.
+			/**
+			for(int ac = 0; ac < rb.getSize(); ac++){
+				Recipe r = rb.getRecipe(ac);
+				System.out.println(r.getName() + " " +  r.getPriority());
+				ArrayList<Action> a = r.getActions();
+				for(int bc = 0; bc < a.size(); bc++){
+					System.out.println(a.get(bc).getName() + " " + a.get(bc).getTime());
+				}
+			}
+			**/
 		}catch(FileNotFoundException e){
 			e.printStackTrace();
 			System.exit(1);
@@ -46,24 +64,16 @@ public class Restaurant{
 			e.printStackTrace();
 			System.exit(1);
 		}
-/*
-		//Restaurant Methods Test
-		RestaurantMethods rm = new RestaurantMethods();
+	}
+	
+	// Created own splitString function. Basically it, it returns the position of the character before the occurence of the first digit.
+	// That position serves as the place where the string would be splitted.
+	public static int splitString(String s){
 		
-		//folder name = MP140
-		File folder = new File("MP140");
-		String [] listFiles = folder.list();
-		
-		int x = 0;
-		while(listFiles.length > x){
-			String [] extension = listFiles[x].split(".");
-			if(!listFiles[x].equals("tasklist.txt") && extension[1].equals(".txt")){
-				Recipe food = rm.addRecipeFromFile(listFiles[x]);
-				System.out.println(food.toString());
-			}
-			x++;
+		for(int ac = 0; ac < s.length(); ac++){
+			if(Character.isDigit(s.charAt(ac))) return ac - 1;
 		}
-*/
+		return -1;
 	}
 
 }

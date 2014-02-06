@@ -4,18 +4,15 @@ public class Action{
 	private int time;
 	private boolean isDone = false;
 	private boolean isCookingStep;
-	private String recipe;
 
 	public Action(String name, int time){
-
 		this.name = name;
 		this.time = time;
-		isCookingStep = (name.toLowerCase.compareTo("cook") == 0);
-
+		isCookingStep = (name.toLowerCase().compareTo("cook") == 0);
 	}
 
 	public void switchDone(){
-		this.isDone = !(this.isDone)
+		this.isDone = !(this.isDone);
 	}
 
 	public void switchDone(boolean isDone){
@@ -32,10 +29,6 @@ public class Action{
 
 	public boolean isDone(){
 		return isDone;
-	}
-
-	public void setRecipe(String name){
-		this.recipe = name;
 	}
 
 	public String toString(){
