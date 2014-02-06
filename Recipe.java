@@ -22,9 +22,9 @@ public class Recipe{
        this.priority = priority;
     }
 	
-	public void setActions(ArrayList<Actions> actions){
+	public void setActions(ArrayList<Action> actions){
 		this.actions = new ArrayList<Action>();
-		for(int ac = 0; ac < actions.size(); actions++){
+		for(int ac = 0; ac < actions.size(); ac++){
 			this.actions.add(actions.get(ac));
 		}
 	}

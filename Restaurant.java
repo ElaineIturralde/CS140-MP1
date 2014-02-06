@@ -14,7 +14,6 @@ public class Restaurant{
 			
 			// Reads the tasklist.txt.
 			BufferedReader br = new BufferedReader(new FileReader("tasklist.txt"));
-			RestaurantMethods rm = new RestaurantMethods();
 			
 			while(br.ready()){
 				
