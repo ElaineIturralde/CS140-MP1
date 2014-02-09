@@ -8,16 +8,30 @@ public class Stove{
     this.stove.add(a);
   }
   
-  public void startCoocking(){
+  public void startCooking(){
     
     //Evaluate all tasks in need of assistants
     for(int i = 0; i < stove.size(); i++){
       
       Action a = new Action();
       a = stove.get(i);
-      for(int j = 0; j < a.getTime(); j++){
+      
+      if(a.getTime > 0){
         
-        //Iterate until the time expires
+        //If we will use RoundRobin, we can change a.getTime to the no. of s we will use and decrement the used ones.
+        //1st choice
+        for(int j = 0; j < a.getTime(); j++){
+          //Iterate until the time expires
+          
+        }
+        
+        //2nd choice
+        /*
+        for(int j = 0; j < roundRobin_Time; j++){
+          //Iterate until the time expires
+          a.setTime(a.getTime--);
+        }
+        */
       }
     }
   }
