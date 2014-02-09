@@ -22,14 +22,17 @@ public class Stove{
         //1st choice
         for(int j = 0; j < a.getTime(); j++){
           //Iterate until the time expires
-          
         }
         
         //2nd choice
         /*
         for(int j = 0; j < roundRobin_Time; j++){
           //Iterate until the time expires
-          a.setTime(a.getTime--);
+          a.setTime(a.getTime()--);
+          if(a.getTime() == 0){
+            
+            break;
+          }
         }
         */
       }
