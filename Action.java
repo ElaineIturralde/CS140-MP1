@@ -5,6 +5,8 @@ public class Action{
 	private boolean isDone = false;
 	private boolean isCookingStep;
 
+	public Action(){}
+	
 	public Action(String name, int time){
 		this.name = name;
 		this.time = time;
