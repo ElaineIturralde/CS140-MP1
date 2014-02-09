@@ -64,6 +64,49 @@ public class Restaurant{
 			e.printStackTrace();
 			System.exit(1);
 		}
+		
+		evaluate(tasklist, rb);
+	}
+	
+	//Evaluates each task if the food is to be cooked in the stove or to be handled by the assistants
+	public static void evaluate(ArrayList<Task> tasklist, RecipeBook rb){
+		
+		Stove st = new Stove();
+		Assistants ast = new Assistants();
+		
+		int index = 0;
+		
+		//Iterate to traverse all the tasks in the tasklist
+		for(int i = 0; i < tasklist.size(); i++){
+			
+			Recipe r = new Recipe();
+			int j = 0;
+			
+			//Finds the recipe to be evaluated
+			while(j < rb.size()){
+			
+				r = rb.get(j);
+				if(r.getName().equals(tasklist.getName())){
+					break;	
+				}
+				j++;
+			}
+			
+			//Breaks down the recipe - stove and assistants
+			for(j = 0; j < r.getActions().size(); j++){
+				
+				Action a = new Action();
+				a = r.getActions().get(j);
+				if(a.isCookingStep){
+					
+					st.add(a);
+				}
+				else{
+					
+					ast.add(a);
+				}
+			}
+		}
 	}
 	
 	// Created own splitString function. Basically it, it returns the position of the character before the occurence of the first digit.
