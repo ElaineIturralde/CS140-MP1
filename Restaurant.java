@@ -74,7 +74,11 @@ public class Restaurant{
 		ArrayList<Action> cookActions = new ArrayList<Action>();
 		ArrayList<Action> prepActions = new ArrayList<Action>();
 		
+		//@total_time para lang yan sa pagenter ng cooking actions. So kailangan pa yan iincrement.
+		//Iniisip ko rin na magset na lang tayo ng predefined time tas break na lang natin kapag
+		//tapos na lahat ng actions
 		int total_time = 0;
+		
 		//Iterate to traverse all the tasks in the tasklist
 		for(int i = 0; i < tasklist.size(); i++){
 			
@@ -111,7 +115,9 @@ public class Restaurant{
 			
 			//Handles time of cooking and preparing. 
 			//But, since all cooking actions and preparing actions are together, 
-			//there should be some way to know which recipe is the action for
+			//there should be some way to know which recipe the action is for
+			//and some way para malaman na tapos na yung cooking para makapagprepare
+			//or the other way around.
 		}
 	}
 	
