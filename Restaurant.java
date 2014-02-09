@@ -7,8 +7,6 @@ public class Restaurant{
 		
 		RecipeBook rb = new RecipeBook();
 		ArrayList<Task> tasklist = new ArrayList<Task>();
-		ArrayList<Action> cookActions;
-		ArrayList<Action> prepActions;
 
 		try{
 			
@@ -65,16 +63,64 @@ public class Restaurant{
 			System.exit(1);
 		}
 		
+		//I made 2 Kinds of Evaluate methods. Pacheck na lang
 		evaluate(tasklist, rb);
 	}
 	
 	//Evaluates each task if the food is to be cooked in the stove or to be handled by the assistants
+	//Evaluate 1
+	public static void evaluate(ArrayList<Task> tasklist, RecipeBook rb){
+		
+		ArrayList<Action> cookActions = new ArrayList<Action>();
+		ArrayList<Action> prepActions = new ArrayList<Action>();
+		
+		int total_time = 0;
+		//Iterate to traverse all the tasks in the tasklist
+		for(int i = 0; i < tasklist.size(); i++){
+			
+			Recipe r = new Recipe();
+			total_time += tasklist.get(i).getStartTime();
+			
+			//Finds the recipe to be evaluated
+			for(int j = 0; j < rb.size(); j++){
+			
+				r = rb.get(j);
+				if(r.getName().equals(tasklist.getName())){
+					break;	
+				}
+				j++;
+			}
+			
+			//Breaks down the recipe - stove and assistants
+			for(int j = 0; j < r.getActions().size(); j++){
+				
+				Action a = new Action();
+				a = r.getActions().get(j);
+				if(a.isCookingStep){
+					
+					cookActions.add(a);
+				}
+				else{
+					
+					prepActions.add(a);
+				}
+			}
+		}
+		
+		for(int i = 0; i < total_time; i++){
+			
+			//Handles time of cooking and preparing. 
+			//But, since all cooking actions and preparing actions are together, 
+			//there should be some way to know which recipe is the action for
+		}
+	}
+	
+	//Evaluates each task if the food is to be cooked in the stove or to be handled by the assistants
+	//Evaluate2
 	public static void evaluate(ArrayList<Task> tasklist, RecipeBook rb){
 		
 		Stove st = new Stove();
 		Assistants ast = new Assistants();
-		
-		int index = 0;
 		
 		//Iterate to traverse all the tasks in the tasklist
 		for(int i = 0; i < tasklist.size(); i++){
