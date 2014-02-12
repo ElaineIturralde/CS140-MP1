@@ -42,7 +42,7 @@ public class Recipe{
     	int cooking_time = 0, noncooking_time = 0, no_of_cookingActions = 0, no_of_noncookingActions = 0;
     	
     	for(int ac = 0; ac < actions.size(); ac++){
-    		if(actions.get(ac).isCookingStep){
+    		if(actions.get(ac).isCookingStep()){
     			no_of_cookingActions++;
     			cooking_time += actions.get(ac).getTime();
     		}
