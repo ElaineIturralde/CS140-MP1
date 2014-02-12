@@ -36,13 +36,23 @@ public class Recipe{
     public int getPriority(){
         return this.priority;
     }
-    
-	/**   
+      
     public int getNewPriority(){
-    	//int result = //formula ni Genesis
-        //return result;
-    }
-	**/
+    	//Cjay, gawa ka ng isCookingStep method sa Action
+    	int cooking_time = 0, noncooking_time = 0, no_of_cookingActions = 0, no_of_noncookingActions = 0;
+    	
+    	for(int ac = 0; ac < actions.size(); ac++){
+    		if(actions.get(ac).isCookingStep){
+    			no_of_cookingActions++;
+    			cooking_time += actions.get(ac).getTime();
+    		}
+    		else{
+    			no_of_noncookingActions++;
+    			noncooking_time += actions.get(ac).getTime();
+    		}
+    	}
+    	return (((50 *  (10-this.priority)) + (30 * (cooking_time / no_of_cookingActions))) + (20 * noncooking_time / no_of_noncookingActions));
+	}
         
     public ArrayList<Action> getActions(){
         return this.actions;
