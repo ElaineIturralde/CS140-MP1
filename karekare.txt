@@ -1,7 +1,2 @@
 karekare 3
 prep 10
-cook 30
-prep 5
-cook 10
-prep 2
-cook 5

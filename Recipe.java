@@ -1,14 +1,14 @@
-import java.util.ArrayList;
+import java.util.*;
 
 public class Recipe{
 
     private String name;
     private int priority;
-    private ArrayList<Action> actions;
+    private LinkedList<Action> actions;
 
     public Recipe(){}
 
-    public Recipe(String name, int priority, ArrayList<Action> actions){
+    public Recipe(String name, int priority, LinkedList<Action> actions){
         this.name = name;
         this.priority = priority;
         this.actions = actions;
@@ -22,8 +22,8 @@ public class Recipe{
        this.priority = priority;
     }
 	
-	public void setActions(ArrayList<Action> actions){
-		this.actions = new ArrayList<Action>();
+	public void setActions(LinkedList<Action> actions){
+		this.actions = new LinkedList<Action>();
 		for(int ac = 0; ac < actions.size(); ac++){
 			this.actions.add(actions.get(ac));
 		}
@@ -44,7 +44,7 @@ public class Recipe{
     }
 	**/
         
-    public ArrayList<Action> getActions(){
+    public LinkedList<Action> getActions(){
         return this.actions;
     }
  
