@@ -1,14 +1,14 @@
-import java.util.ArrayList;
+import java.util.*;
 
 public class Recipe{
 
     private String name;
     private int priority;
-    private ArrayList<Action> actions;
+    private LinkedList<Action> actions;
 
     public Recipe(){}
 
-    public Recipe(String name, int priority, ArrayList<Action> actions){
+    public Recipe(String name, int priority, LinkedList<Action> actions){
         this.name = name;
         this.priority = priority;
         this.actions = actions;
@@ -22,8 +22,8 @@ public class Recipe{
        this.priority = priority;
     }
 	
-	public void setActions(ArrayList<Action> actions){
-		this.actions = new ArrayList<Action>();
+	public void setActions(LinkedList<Action> actions){
+		this.actions = new LinkedList<Action>();
 		for(int ac = 0; ac < actions.size(); ac++){
 			this.actions.add(actions.get(ac));
 		}
@@ -36,13 +36,11 @@ public class Recipe{
     public int getPriority(){
         return this.priority;
     }
-      
+   
     public int getNewPriority(){
-    	//Cjay, gawa ka ng isCookingStep method sa Action
     	int cooking_time = 0, noncooking_time = 0, no_of_cookingActions = 0, no_of_noncookingActions = 0;
-    	
     	for(int ac = 0; ac < actions.size(); ac++){
-    		if(actions.get(ac).isCookingStep()){
+    		if(actions.get(ac).getIsCookingStep()){
     			no_of_cookingActions++;
     			cooking_time += actions.get(ac).getTime();
     		}
@@ -51,10 +49,16 @@ public class Recipe{
     			noncooking_time += actions.get(ac).getTime();
     		}
     	}
+    	if(no_of_noncookingActions == 0){
+    		no_of_noncookingActions = 1;
+    	}
+    	if(no_of_cookingActions == 0){
+    		no_of_cookingActions = 1;
+    	}
     	return (((50 *  (10-this.priority)) + (30 * (cooking_time / no_of_cookingActions))) + (20 * noncooking_time / no_of_noncookingActions));
 	}
         
-    public ArrayList<Action> getActions(){
+    public LinkedList<Action> getActions(){
         return this.actions;
     }
  
