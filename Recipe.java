@@ -5,6 +5,8 @@ public class Recipe{
     private String name;
     private int priority;
     private LinkedList<Action> actions;
+	private boolean isExecuting = false;
+	private int cookPriority;
 
     public Recipe(){}
 
@@ -12,6 +14,33 @@ public class Recipe{
         this.name = name;
         this.priority = priority;
         this.actions = actions;
+        this.cookPriority = computeCookPriority();
+    }
+
+    //Computes the cook priority based on actual priority, average preparation time and average cooking time
+    public int computeCookPriority(){
+
+    	int[] averageTimes = getAveTime();
+
+    	return ( (10-this.priority * 50 ) + (averageTimes[1] * 30) + averageTimes[0] * 20);
+
+    }
+
+    //Returns the computed average preparation time and average time
+    public int[] getAveTime(){
+
+    	int[] ret = new int[2];
+    	//Iterate each element of actions as cur <foreach loop for actions>
+    	for(Action cur: this.actions){
+
+    		if(cur.getName().equalsIgnoreCase("cook"))
+    			ret[1]+=cur.getTime();
+			else    		
+				ret[0]+=cur.getTime();
+    	}
+
+    	return ret;
+
     }
         
     public void setName(String name){
@@ -36,26 +65,27 @@ public class Recipe{
     public int getPriority(){
         return this.priority;
     }
-   
+    
+
     public int getNewPriority(){
-    	int cooking_time = 0, noncooking_time = 0, no_of_cookingActions = 0, no_of_noncookingActions = 0;
-    	for(int ac = 0; ac < actions.size(); ac++){
-    		if(actions.get(ac).getIsCookingStep()){
-    			no_of_cookingActions++;
-    			cooking_time += actions.get(ac).getTime();
-    		}
-    		else{
-    			no_of_noncookingActions++;
-    			noncooking_time += actions.get(ac).getTime();
-    		}
-    	}
-    	if(no_of_noncookingActions == 0){
-    		no_of_noncookingActions = 1;
-    	}
-    	if(no_of_cookingActions == 0){
-    		no_of_cookingActions = 1;
-    	}
-    	return (((50 *  (10-this.priority)) + (30 * (cooking_time / no_of_cookingActions))) + (20 * noncooking_time / no_of_noncookingActions));
+    	return this.cookPriority;
+    }
+
+	
+	public boolean isExecuting(){
+		return this.isExecuting;
+	}
+	
+	public void execute(){
+		this.isExecuting = true;
+	}
+	
+	public void stopExecute(){
+		this.isExecuting = false;
+	}
+	
+	public boolean isDone(){
+		return this.actions.size() == 0;
 	}
         
     public LinkedList<Action> getActions(){
