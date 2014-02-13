@@ -59,11 +59,11 @@ public class Restaurant{
 			ps.println("Time, Stove, Ready, Assistants, Remarks");
 			int time = 1;
 			int count = 0;
+                        int stoveUtil = 0;
 			Action inStove = null;
 			
+
 			while(true){
-				
-				//System.out.println(cookActions.size() + " " + prepActions.size());
 				
 				Task t;
 				Recipe r;
@@ -89,48 +89,45 @@ public class Restaurant{
 
 				}
 
-                                //Sort cookActions LinkedList by Cooking Priority                                                        
-                                Collections.sort(cookActions, new Comparator<Action>() {
-                                        //Override Collections.compare with one which compares cooking priority
-                                        @Override
-                                        public int compare(Action a1, Action a2) {
-                                             return a1.getPriority() - a2.getPriority();
-                                        }
-                                });
-
 
 				//Execution Preparation Process
-                                Iterator<Action> i = prepActions.iterator();
-				while(i.hasNext()){
-
-                                        Action a = i.next();
-
-					if(a.getTime() != 0){
-						assistants = assistants + a.getRecipe() + "(" + a.getName() + "=" +a.getTime() + ")";
-						a.setTime(a.getTime()-1);
-					}
-					else{
-						remarks = remarks + "Done preparing " + a.getRecipe() + ". ";
-						i.remove();
-						
-                                                //Iterate each recipe in order list?
-						for(int bc = 0; bc < orders.size(); bc++){
-                                                        //If recipe is found and done then remove from list?
-							if(a.getRecipe().equals(orders.get(bc).getName()) && orders.get(bc).isDone()){
-								orders.remove(bc);
-                                                                //Workaround on removing 1 element in the oreder list?
-								bc--;
-							}
-                                                        //If recipe is found but not yet done then remove the action from the Recipe's Action List then get next action
-							else if(a.getRecipe().equals(orders.get(bc).getName()) && !orders.get(bc).isDone()){
+                                for(int ac = 0; ac < prepActions.size(); ac++){
+                                        Action a = prepActions.get(ac);
+                                        
+                                        if(a.getTime() != 0){
+                                                assistants = assistants + a.getRecipe() + "(" + a.getName() + "=" +a.getTime() + ")";
+                                                a.setTime(a.getTime()-1);
+                                        }
+                                        else{
+                                                remarks = remarks + "Done preparing " + a.getRecipe() + ". ";
+                                                prepActions.remove(ac);
+                                                ac--;
+                                                
+                                                for(int bc = 0; bc < orders.size(); bc++){
+                                                        if(a.getRecipe().equals(orders.get(bc).getName()) && orders.get(bc).isDone()){
+                                                                orders.remove(bc);
+                                                                bc--;
+                                                        }
+                                                        else if(a.getRecipe().equals(orders.get(bc).getName()) && !orders.get(bc).isDone()){
                                                                 if(orders.get(bc).getActions().peek().getName().equalsIgnoreCase("prep"))
-								        prepActions.add(orders.get(bc).getActions().remove());
-                                                                else
-                                                                        cookActions.add(orders.get(bc).getActions().remove());
-							}
-						}
-					}
-				}
+                                                                        prepActions.add(orders.get(bc).getActions().remove());
+                                                               else{
+                                                                       cookActions.add(orders.get(bc).getActions().remove());
+                                                                        Action holder = cookActions.remove();
+                                                                        //Sort cookActions LinkedList by Cooking Priority                                                        
+                                                                        Collections.sort(cookActions, new Comparator<Action>() {
+                                                                                //Override Collections.compare with one which compares cooking priority
+                                                                                @Override
+                                                                                public int compare(Action a1, Action a2) {
+                                                                                     return a1.getPriority() - a2.getPriority();
+                                                                                }
+                                                                        });
+                                                                        cookActions.addFirst(holder);
+                                                                }
+                                                        }
+                                                }
+                                        }
+                                }
 
                                 //Execute Cooking Process
                                 if(cookActions.size() != 0){
@@ -139,6 +136,7 @@ public class Restaurant{
                                         if(a.getTime() != 0){
                                                 stove = stove + a.getRecipe() + "(" + a.getName() + "=" +a.getTime() + ")";
                                                 a.setTime(a.getTime()-1);
+                                                stoveUtil++;
                                         }
                                         else{
                                                 remarks = remarks + "Done Cooking " + a.getRecipe() + ". ";
@@ -156,8 +154,19 @@ public class Restaurant{
                                                        else if(a.getRecipe().equals(bc.getName()) && !bc.isDone()){
                                                                 if( bc.getActions().peek().getName().equalsIgnoreCase("prep"))
                                                                         prepActions.add(bc.getActions().remove());
-                                                                 else
-                                                                        cookActions.add(bc.getActions().remove());
+                                                                 else{
+                                                                       cookActions.add(bc.getActions().remove());
+                                                                       Action holder = cookActions.remove();
+                                                                        //Sort cookActions LinkedList by Cooking Priority                                                        
+                                                                        Collections.sort(cookActions, new Comparator<Action>() {
+                                                                                //Override Collections.compare with one which compares cooking priority
+                                                                                @Override
+                                                                                public int compare(Action a1, Action a2) {
+                                                                                     return a1.getPriority() - a2.getPriority();
+                                                                                }
+                                                                        });
+                                                                        cookActions.addFirst(holder);
+                                                                }
                                                         }       
                                                 }
                                         }
@@ -165,8 +174,6 @@ public class Restaurant{
 
 
                                 //End Cooking Process
-				
-				System.out.println(time + " " + tasklist.size() + " " + orders.size() + " " + prepActions.size());
 				
 				if(stove.length() == 0){
 					stove = "empty";
@@ -192,7 +199,7 @@ public class Restaurant{
 				}
 			}
 			ps.println("Total Amount of Time: " + time);
-			ps.println("Stove Utilization: ");
+			ps.println("Stove Utilization: " + stoveUtil);
 			
 		}catch(FileNotFoundException e){
 			e.printStackTrace();
