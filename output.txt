@@ -1,0 +1,17 @@
+Time, Stove, Ready, Assistants, Remarks
+1, adobo(cook=10), none, none, adobo arrives. 
+2, adobo(cook=9), none, none, none
+3, adobo(cook=8), none, none, none
+4, adobo(cook=7), none, none, none
+5, adobo(cook=6), none, tinola(prep=15), tinola arrives. 
+6, adobo(cook=5), none, tinola(prep=14), none
+7, adobo(cook=4), none, tinola(prep=13), none
+8, adobo(cook=3), none, tinola(prep=12)karekare(prep=10), karekare arrives. 
+9, adobo(cook=2), none, tinola(prep=11)karekare(prep=9), none
+10, adobo(cook=1), none, tinola(prep=10)karekare(prep=8), none
+11, empty, none, tinola(prep=9)karekare(prep=7), Done Cooking adobo. 
+12, empty, none, tinola(prep=8)karekare(prep=6)adobo(prep=5), none
+13, empty, none, tinola(prep=7)karekare(prep=5)adobo(prep=4), none
+14, adobo(cook=10), none, tinola(prep=6)karekare(prep=4)adobo(prep=3), adobo arrives. 
+15, adobo(cook=9), none, tinola(prep=5)karekare(prep=3)adobo(prep=2), none
+16, adobo(cook=8), none, tinola(prep=4)karekare(prep=2)adobo(prep=1), none

@@ -6,6 +6,7 @@ public class Action{
 	private boolean isDone = false;
 	private boolean isCookingStep;
 	private boolean isExecuting = false;
+	private int priority;
 
 	public Action(String recipe, String name, int time){
 		this.recipe = recipe;
@@ -20,6 +21,10 @@ public class Action{
 	
 	public void setTime(int time){
 		this.time = time;
+	}
+
+	public void setPriority(int priority){
+		this.priority = priority;
 	}
 	
 	public void setIsDone(){
@@ -40,6 +45,10 @@ public class Action{
 
 	public int getTime(){
 		return this.time;
+	}
+
+	public int getPriority(){
+		return this.priority;
 	}
 	
 	public boolean getIsExecuting(){
