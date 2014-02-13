@@ -15,3 +15,103 @@ Time, Stove, Ready, Assistants, Remarks
 14, adobo(cook=10), none, tinola(prep=6)karekare(prep=4)adobo(prep=3), adobo arrives. 
 15, adobo(cook=9), none, tinola(prep=5)karekare(prep=3)adobo(prep=2), none
 16, adobo(cook=8), none, tinola(prep=4)karekare(prep=2)adobo(prep=1), none
+17, adobo(cook=7), none, tinola(prep=3)karekare(prep=1)adobo(prep=5), Done preparing adobo. 
+18, adobo(cook=6), none, tinola(prep=2)adobo(prep=4), Done preparing karekare. 
+19, adobo(cook=5), none, tinola(prep=1)adobo(prep=3), none
+20, adobo(cook=4), none, adobo(prep=2), Done preparing tinola. 
+21, adobo(cook=3), none, adobo(prep=1), none
+22, adobo(cook=2), none, none, Done preparing adobo. 
+23, adobo(cook=1), none, none, none
+24, empty, none, none, Done Cooking adobo. 
+25, karekare(cook=30), none, none, none
+26, karekare(cook=29), none, none, none
+27, karekare(cook=28), none, none, none
+28, karekare(cook=27), none, none, none
+29, karekare(cook=26), none, none, none
+30, karekare(cook=25), none, none, none
+31, karekare(cook=24), none, none, none
+32, karekare(cook=23), none, none, none
+33, karekare(cook=22), none, none, none
+34, karekare(cook=21), none, none, none
+35, karekare(cook=20), none, none, none
+36, karekare(cook=19), none, none, none
+37, karekare(cook=18), none, none, none
+38, karekare(cook=17), none, none, none
+39, karekare(cook=16), none, none, none
+40, karekare(cook=15), none, none, none
+41, karekare(cook=14), none, none, none
+42, karekare(cook=13), none, none, none
+43, karekare(cook=12), none, none, none
+44, karekare(cook=11), none, none, none
+45, karekare(cook=10), none, none, none
+46, karekare(cook=9), none, none, none
+47, karekare(cook=8), none, none, none
+48, karekare(cook=7), none, none, none
+49, karekare(cook=6), none, none, none
+50, karekare(cook=5), none, none, none
+51, karekare(cook=4), none, none, none
+52, karekare(cook=3), none, none, none
+53, karekare(cook=2), none, none, none
+54, karekare(cook=1), none, none, none
+55, empty, none, none, Done Cooking karekare. 
+56, tinola(cook=25), none, karekare(prep=5), none
+57, tinola(cook=24), none, karekare(prep=4), none
+58, tinola(cook=23), none, karekare(prep=3), none
+59, tinola(cook=22), none, karekare(prep=2), none
+60, tinola(cook=21), none, karekare(prep=1), none
+61, tinola(cook=20), none, none, Done preparing karekare. 
+62, tinola(cook=19), none, none, none
+63, tinola(cook=18), none, none, none
+64, tinola(cook=17), none, none, none
+65, tinola(cook=16), none, none, none
+66, tinola(cook=15), none, none, none
+67, tinola(cook=14), none, none, none
+68, tinola(cook=13), none, none, none
+69, tinola(cook=12), none, none, none
+70, tinola(cook=11), none, none, none
+71, tinola(cook=10), none, none, none
+72, tinola(cook=9), none, none, none
+73, tinola(cook=8), none, none, none
+74, tinola(cook=7), none, none, none
+75, tinola(cook=6), none, none, none
+76, tinola(cook=5), none, none, none
+77, tinola(cook=4), none, none, none
+78, tinola(cook=3), none, none, none
+79, tinola(cook=2), none, none, none
+80, tinola(cook=1), none, none, none
+81, empty, none, none, Done Cooking tinola. 
+82, karekare(cook=10), none, tinola(prep=5), none
+83, karekare(cook=9), none, tinola(prep=4), none
+84, karekare(cook=8), none, tinola(prep=3), none
+85, karekare(cook=7), none, tinola(prep=2), none
+86, karekare(cook=6), none, tinola(prep=1), none
+87, karekare(cook=5), none, none, Done preparing tinola. 
+88, karekare(cook=4), none, none, none
+89, karekare(cook=3), none, none, none
+90, karekare(cook=2), none, none, none
+91, karekare(cook=1), none, none, none
+92, empty, none, none, Done Cooking karekare. 
+93, tinola(cook=10), none, karekare(prep=2), none
+94, tinola(cook=9), none, karekare(prep=1), none
+95, tinola(cook=8), none, none, Done preparing karekare. 
+96, tinola(cook=7), none, none, none
+97, tinola(cook=6), none, none, none
+98, tinola(cook=5), none, none, none
+99, tinola(cook=4), none, none, none
+100, tinola(cook=3), none, none, none
+101, tinola(cook=2), none, none, none
+102, tinola(cook=1), none, none, none
+103, empty, none, none, Done Cooking tinola. 
+104, karekare(cook=5), none, tinola(prep=10), none
+105, karekare(cook=4), none, tinola(prep=9), none
+106, karekare(cook=3), none, tinola(prep=8), none
+107, karekare(cook=2), none, tinola(prep=7), none
+108, karekare(cook=1), none, tinola(prep=6), none
+109, empty, none, tinola(prep=5), Done Cooking karekare. 
+110, empty, none, tinola(prep=4), none
+111, empty, none, tinola(prep=3), none
+112, empty, none, tinola(prep=2), none
+113, empty, none, tinola(prep=1), none
+114, empty, none, none, Done preparing tinola. 
+Total Amount of Time: 114
+Stove Utilization: 100

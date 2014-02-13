@@ -6,7 +6,7 @@ public class Recipe{
     private int priority;
     private LinkedList<Action> actions;
 	private boolean isExecuting = false;
-	private int cookPriority;
+	private int cookPriority; //Computed priority
 
     public Recipe(){}
 
@@ -22,7 +22,7 @@ public class Recipe{
 
     	int[] averageTimes = getAveTime();
 
-    	return ( (10-this.priority * 50 ) + (averageTimes[1] * 30) + averageTimes[0] * 20);
+    	return ( (10-this.priority * 5 ) + (averageTimes[1] * 3) + averageTimes[0] * 2);
 
     }
 
@@ -30,14 +30,21 @@ public class Recipe{
     public int[] getAveTime(){
 
     	int[] ret = new int[2];
+        int cookNum = 0;
     	//Iterate each element of actions as cur <foreach loop for actions>
     	for(Action cur: this.actions){
 
-    		if(cur.getName().equalsIgnoreCase("cook"))
-    			ret[1]+=cur.getTime();
+            //Get the total time for each cook and prep ACTION
+    		if(cur.getName().equalsIgnoreCase("cook")){
+    			ret[1]+=cur.getTime() * 100; //Multiplied by 100 to increase precision
+                cookNum++;
+            }
 			else    		
-				ret[0]+=cur.getTime();
+				ret[0]+=cur.getTime() * 100; //Multiplied by 100 to increase precision
     	}
+
+        ret[1] /= cookNum;
+        ret[0] /= this.actions.size() - cookNum;
 
     	return ret;
 

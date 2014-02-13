@@ -51,17 +51,15 @@ public class Restaurant{
 			}
 			
 			// Execution Process
-			LinkedList<Recipe> orders = new LinkedList<Recipe>();
-			LinkedList<Action> cookActions = new LinkedList<Action>();
-			LinkedList<Action> prepActions = new LinkedList<Action>();
+			LinkedList<Recipe> orders = new LinkedList<Recipe>();      //Contains the RECIPEs being processed
+			LinkedList<Action> cookActions = new LinkedList<Action>(); //Job queue for cook ACTIONs
+			LinkedList<Action> prepActions = new LinkedList<Action>(); //Job queue for job ACTIONs
                         Action currentCooking;
 			PrintStream ps = new PrintStream("output.txt");
 			ps.println("Time, Stove, Ready, Assistants, Remarks");
 			int time = 1;
 			int count = 0;
-                        int stoveUtil = 0;
-			Action inStove = null;
-			
+                        int stoveUtil = 0; //Keeps track of Stove Utilization
 
 			while(true){
 				
@@ -69,17 +67,22 @@ public class Restaurant{
 				Recipe r;
 				String stove = "", ready = "", assistants = "", remarks = "", remove = "";
 				
-				if(tasklist.size() != 0 && time == tasklist.get(0).getStartTime()){
+                                /*
+                                Checks if the tasklist is not empty and if its first element should start at the current time
+                                then adds the next RECIPE to the orders depending on the extracted value from the tasklist then
+                                gets the first ACTION in the the RECIPE's actionList and adds it to prepActions or cookActions
+                                */
+				if(tasklist.size() != 0 && time == tasklist.peek().getStartTime()){
 					t = tasklist.remove();
 					r = rb.getRecipe(rb.getIndex(t.getName()));
 					orders.add(r);
 					remarks = remarks + r.getName() + " arrives. ";
 					
-					if(orders.get(count).getActions().get(0).getName().equalsIgnoreCase("prep")){
+					if(orders.get(count).getActions().peek().getName().equalsIgnoreCase("prep")){
 						prepActions.add(orders.get(count).getActions().remove());
 					}
 
-                                        else if (orders.get(count).getActions().get(0).getName().equalsIgnoreCase("cook")){
+                                        else if (orders.get(count).getActions().peek().getName().equalsIgnoreCase("cook")){
                                                 cookActions.add(orders.get(count).getActions().remove());
 
                                           
@@ -91,6 +94,14 @@ public class Restaurant{
 
 
 				//Execution Preparation Process
+                                /*
+                                        Iterates each ACTION in prepActions and checks if their remaining time (return value of Action.getTime())
+                                        is not equal to zero. If it is the case then decrement the remaining time otherwise print the remark
+                                        then remove the ACTION in the prepAction and find the RECIPE containing the ACTION. It then checks if
+                                        the actionList of the RECIPE is empty, if the it is empty remove the RECIPE from the orders otherwise
+                                        add the next top element to either prepActions or orderActions.
+
+                                */
                                 for(int ac = 0; ac < prepActions.size(); ac++){
                                         Action a = prepActions.get(ac);
                                         
@@ -103,16 +114,23 @@ public class Restaurant{
                                                 prepActions.remove(ac);
                                                 ac--;
                                                 
+                                                //Iterate each RECIPE in orders then check if it is the RECIPE containing the ACTION
                                                 for(int bc = 0; bc < orders.size(); bc++){
                                                         if(a.getRecipe().equals(orders.get(bc).getName()) && orders.get(bc).isDone()){
                                                                 orders.remove(bc);
                                                                 bc--;
+                                                                break;
                                                         }
                                                         else if(a.getRecipe().equals(orders.get(bc).getName()) && !orders.get(bc).isDone()){
                                                                 if(orders.get(bc).getActions().peek().getName().equalsIgnoreCase("prep"))
                                                                         prepActions.add(orders.get(bc).getActions().remove());
                                                                else{
                                                                        cookActions.add(orders.get(bc).getActions().remove());
+
+                                                                       /*
+                                                                        The next lines of code removes the first element of the cookActions
+                                                                        then sorts the cookActions then returns the first element to avoid pre-emption 
+                                                                        */
                                                                         Action holder = cookActions.remove();
                                                                         //Sort cookActions LinkedList by Cooking Priority                                                        
                                                                         Collections.sort(cookActions, new Comparator<Action>() {
@@ -124,19 +142,24 @@ public class Restaurant{
                                                                         });
                                                                         cookActions.addFirst(holder);
                                                                 }
+                                                                break;
                                                         }
                                                 }
                                         }
                                 }
 
                                 //Execute Cooking Process
+                                /*
+                                        Just like the Execute Preparation Process block but instead of iterating each element
+                                        it just manipulates the top element of the cookActions list
+                                */
                                 if(cookActions.size() != 0){
                                        Action a = cookActions.peek();
 
                                         if(a.getTime() != 0){
                                                 stove = stove + a.getRecipe() + "(" + a.getName() + "=" +a.getTime() + ")";
                                                 a.setTime(a.getTime()-1);
-                                                stoveUtil++;
+                                                stoveUtil++; 
                                         }
                                         else{
                                                 remarks = remarks + "Done Cooking " + a.getRecipe() + ". ";
@@ -156,6 +179,10 @@ public class Restaurant{
                                                                         prepActions.add(bc.getActions().remove());
                                                                  else{
                                                                        cookActions.add(bc.getActions().remove());
+                                                                       /*
+                                                                        The next lines of code removes the first element of the cookActions
+                                                                        then sorts the cookActions then returns the first element to avoid pre-emption 
+                                                                        */
                                                                        Action holder = cookActions.remove();
                                                                         //Sort cookActions LinkedList by Cooking Priority                                                        
                                                                         Collections.sort(cookActions, new Comparator<Action>() {
@@ -198,7 +225,7 @@ public class Restaurant{
 					break;
 				}
 			}
-			ps.println("Total Amount of Time: " + time);
+			ps.println("Total Amount of Time: " + (time - 1));
 			ps.println("Stove Utilization: " + stoveUtil);
 			
 		}catch(FileNotFoundException e){
