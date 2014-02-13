@@ -107,6 +107,7 @@ public class Restaurant{
                                 		System.out.println ("order " + orders.get(ac).getName());
                                 	}*/
                                 	
+                                	cookActions = new LinkedList<Action>();
                                 	for(int ac = 0; ac < orders.size(); ac++){
                                 		if(!orders.get(ac).getActions().isEmpty() && orders.get(ac).getActions().get(0).getName().equalsIgnoreCase("cook")){
                                 			cookActions.add(orders.get(ac).getActions().get(0));
