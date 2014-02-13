@@ -1,0 +1,595 @@
+[Time 1]
++adobo:cook added to cookActions
+=Current recipe: adobo
+>Current elements in cookActions:
+       ~adobo-3985
+[Time 2]
+=Current recipe: adobo
+>Current elements in cookActions:
+       ~adobo-3985
+[Time 3]
+=Current recipe: adobo
+>Current elements in cookActions:
+       ~adobo-3985
+[Time 4]
+=Current recipe: adobo
+>Current elements in cookActions:
+       ~adobo-3985
+[Time 5]
+=Current recipe: adobo
+>Current elements in cookActions:
+       ~adobo-3985
+[Time 6]
+=Current recipe: adobo
+>Current elements in cookActions:
+       ~adobo-3985
+[Time 7]
+=Current recipe: adobo
+>Current elements in cookActions:
+       ~adobo-3985
+[Time 8]
+=Current recipe: adobo
+>Current elements in cookActions:
+       ~adobo-3985
+[Time 9]
+=Current recipe: adobo
+>Current elements in cookActions:
+       ~adobo-3985
+[Time 10]
+=Current recipe: adobo
+>Current elements in cookActions:
+       ~adobo-3985
+[Time 11]
+-adobo:cook removed from cookActions
+>Current elements in cookActions:
+[Time 12]
+[Time 13]
+[Time 14]
++karekare:cook added to cookActions
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+[Time 15]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+[Time 16]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+[Time 17]
++adobo:cook added to cookActions
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+[Time 18]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+[Time 19]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+[Time 20]
++tinola:cook added to cookActions
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+       ~tinola-7230
+[Time 21]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+       ~tinola-7230
+[Time 22]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+       ~tinola-7230
+[Time 23]
++karekare:cook added to cookActions
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+       ~karekare-5627
+       ~tinola-7230
+[Time 24]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+       ~karekare-5627
+       ~tinola-7230
+[Time 25]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+       ~karekare-5627
+       ~tinola-7230
+[Time 26]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+       ~karekare-5627
+       ~tinola-7230
+[Time 27]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+       ~karekare-5627
+       ~tinola-7230
+[Time 28]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+       ~karekare-5627
+       ~tinola-7230
+[Time 29]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+       ~karekare-5627
+       ~tinola-7230
+[Time 30]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+       ~karekare-5627
+       ~tinola-7230
+[Time 31]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+       ~karekare-5627
+       ~tinola-7230
+[Time 32]
++karekare:cook added to cookActions
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 33]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 34]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 35]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 36]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 37]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 38]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 39]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 40]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 41]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 42]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 43]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~adobo-3985
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 44]
+-karekare:cook removed from cookActions
+>Current elements in cookActions:
+       ~adobo-3985
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 45]
+=Current recipe: adobo
+>Current elements in cookActions:
+       ~adobo-3985
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 46]
+=Current recipe: adobo
+>Current elements in cookActions:
+       ~adobo-3985
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 47]
+=Current recipe: adobo
+>Current elements in cookActions:
+       ~adobo-3985
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 48]
+=Current recipe: adobo
+>Current elements in cookActions:
+       ~adobo-3985
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 49]
+=Current recipe: adobo
+>Current elements in cookActions:
+       ~adobo-3985
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 50]
+=Current recipe: adobo
+>Current elements in cookActions:
+       ~adobo-3985
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 51]
+=Current recipe: adobo
+>Current elements in cookActions:
+       ~adobo-3985
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 52]
+=Current recipe: adobo
+>Current elements in cookActions:
+       ~adobo-3985
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 53]
+=Current recipe: adobo
+>Current elements in cookActions:
+       ~adobo-3985
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 54]
+=Current recipe: adobo
+>Current elements in cookActions:
+       ~adobo-3985
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 55]
+-adobo:cook removed from cookActions
+>Current elements in cookActions:
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 56]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 57]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 58]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 59]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 60]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 61]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 62]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 63]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 64]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 65]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~karekare-5627
+       ~tinola-7230
+[Time 66]
+-karekare:cook removed from cookActions
+>Current elements in cookActions:
+       ~karekare-5627
+       ~tinola-7230
+[Time 67]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~tinola-7230
+[Time 68]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~tinola-7230
+[Time 69]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~tinola-7230
+[Time 70]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~tinola-7230
+[Time 71]
+=Current recipe: karekare
+>Current elements in cookActions:
+       ~karekare-5627
+       ~tinola-7230
+[Time 72]
+-karekare:cook removed from cookActions
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 73]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 74]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 75]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 76]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 77]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 78]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 79]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 80]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 81]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 82]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 83]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 84]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 85]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 86]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 87]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 88]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 89]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 90]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 91]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 92]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 93]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 94]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 95]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 96]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 97]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 98]
+-tinola:cook removed from cookActions
+>Current elements in cookActions:
+[Time 99]
+[Time 100]
+[Time 101]
+[Time 102]
+[Time 103]
+[Time 104]
++tinola:cook added to cookActions
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 105]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 106]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 107]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 108]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 109]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 110]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 111]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 112]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 113]
+=Current recipe: tinola
+>Current elements in cookActions:
+       ~tinola-7230
+[Time 114]
+-tinola:cook removed from cookActions
+>Current elements in cookActions:
+[Time 115]
+[Time 116]
+[Time 117]
+[Time 118]
+[Time 119]
+[Time 120]
+[Time 121]
+[Time 122]
+[Time 123]
+[Time 124]
+[Time 125]

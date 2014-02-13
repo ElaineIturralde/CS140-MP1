@@ -56,12 +56,16 @@ public class Restaurant{
 			LinkedList<Action> prepActions = new LinkedList<Action>(); //Job queue for job ACTIONs
                         Action currentCooking;
 			PrintStream ps = new PrintStream("output.txt");
+                        PrintStream cookActionsLog = new PrintStream("cookActionsLog.txt");
 			ps.println("Time, Stove, Ready, Assistants, Remarks");
 			int time = 1;
 			int count = 0;
                         int stoveUtil = 0; //Keeps track of Stove Utilization
 
 			while(true){
+
+                                cookActionsLog.println("[Time " + time + "]");
+                                
 				
 				Task t;
 				Recipe r;
@@ -83,6 +87,7 @@ public class Restaurant{
 					}
 
                                         else if (orders.get(count).getActions().peek().getName().equalsIgnoreCase("cook")){
+                                                cookActionsLog.println("+" + orders.get(count).getName() + ":" +orders.get(count).getActions().peek().getName() + " added to cookActions"); 
                                                 cookActions.add(orders.get(count).getActions().remove());
 
                                           
@@ -122,9 +127,12 @@ public class Restaurant{
                                                                 break;
                                                         }
                                                         else if(a.getRecipe().equals(orders.get(bc).getName()) && !orders.get(bc).isDone()){
-                                                                if(orders.get(bc).getActions().peek().getName().equalsIgnoreCase("prep"))
+                                                                if(orders.get(bc).getActions().peek().getName().equalsIgnoreCase("prep")){
                                                                         prepActions.add(orders.get(bc).getActions().remove());
+                                                                        count--;
+                                                                }
                                                                else{
+                                                                        cookActionsLog.println("+"+ orders.get(bc).getName() + ":" + orders.get(bc).getActions().peek().getName() + " added to cookActions"); 
                                                                        cookActions.add(orders.get(bc).getActions().remove());
 
                                                                        /*
@@ -159,9 +167,11 @@ public class Restaurant{
                                         if(a.getTime() != 0){
                                                 stove = stove + a.getRecipe() + "(" + a.getName() + "=" +a.getTime() + ")";
                                                 a.setTime(a.getTime()-1);
+                                                cookActionsLog.println("=Current recipe: " + a.getRecipe());
                                                 stoveUtil++; 
                                         }
                                         else{
+                                                 cookActionsLog.println("-" + a.getRecipe() + ":" + a.getName() + " removed from cookActions");
                                                 remarks = remarks + "Done Cooking " + a.getRecipe() + ". ";
                                                 cookActions.remove();
 
@@ -171,14 +181,20 @@ public class Restaurant{
                                                         //If recipe is found and done then remove from list?
                                                         Recipe bc = j.next();
                                                         if(a.getRecipe().equals(bc.getName()) && bc.isDone()){
+                
                                                                 j.remove();
                                                         }
                                                         //If recipe is found but not yet done then remove the action from the Recipe's Action List then get next action
                                                        else if(a.getRecipe().equals(bc.getName()) && !bc.isDone()){
-                                                                if( bc.getActions().peek().getName().equalsIgnoreCase("prep"))
+                                                                if( bc.getActions().peek().getName().equalsIgnoreCase("prep")){
                                                                         prepActions.add(bc.getActions().remove());
+                                                                        count--;
+                                                                }
                                                                  else{
+
+                                                                       cookActionsLog.println("+" + bc.getName() + ":"+ bc.getActions().peek().getName() + " added to cookActions"); 
                                                                        cookActions.add(bc.getActions().remove());
+
                                                                        /*
                                                                         The next lines of code removes the first element of the cookActions
                                                                         then sorts the cookActions then returns the first element to avoid pre-emption 
@@ -196,6 +212,10 @@ public class Restaurant{
                                                                 }
                                                         }       
                                                 }
+                                        }
+                                        cookActionsLog.println(">Current elements in cookActions:");
+                                        for(Action ar : cookActions){
+                                         cookActionsLog.println("       ~"+ar.getRecipe() + "-" + ar.getPriority());
                                         }
                                 }
 
